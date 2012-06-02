@@ -1,29 +1,29 @@
 #
 # Conditional build:
 %bcond_with	tests		# perform "make test"
-#
+
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	DateTime
 %define	pnam	Format-Natural
 Summary:	DateTime::Format::Natural - Create machine readable date/time with natural parsing logic
 Summary(pl.UTF-8):	DateTime::Format::Natural - Tworzy datę/czas dogodny dla maszyn
 Name:		perl-DateTime-Format-Natural
-Version:	0.98
+Version:	1.00
 Release:	1
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-authors/id/S/SC/SCHUBIGER/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	a081295bcb2eb5a94c608b6c13174cc2
+# Source0-md5:	1ebc6538cb21c7a6c9d0b68169a8bac8
 URL:		http://search.cpan.org/dist/DateTime-Format-Natural/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
+BuildRequires:	perl(Test::MockTime)
 BuildRequires:	perl(boolean)
 BuildRequires:	perl-Date-Calc
 BuildRequires:	perl-DateTime
 BuildRequires:	perl-List-MoreUtils
 BuildRequires:	perl-Params-Validate
-BuildRequires:	perl(Test::MockTime)
 %endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
