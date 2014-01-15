@@ -2,14 +2,14 @@
 # Conditional build:
 %bcond_with	tests		# perform "make test"
 
-%include	/usr/lib/rpm/macros.perl
 %define	pdir	DateTime
 %define	pnam	Format-Natural
+%include	/usr/lib/rpm/macros.perl
 Summary:	DateTime::Format::Natural - Create machine readable date/time with natural parsing logic
 Summary(pl.UTF-8):	DateTime::Format::Natural - Tworzy datę/czas dogodny dla maszyn
 Name:		perl-DateTime-Format-Natural
 Version:	1.02
-Release:	1
+Release:	2
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-authors/id/S/SC/SCHUBIGER/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -43,7 +43,7 @@ dogodny dla maszyn.
 
 %build
 %{__perl} Build.PL \
-	destdir=$RPM_BUILD_ROOT \
+	perl=%{__perl} \
 	installdirs=vendor
 ./Build
 
@@ -51,8 +51,8 @@ dogodny dla maszyn.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
-./Build install
+./Build install \
+	destdir=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -60,7 +60,8 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes
-%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/dateparse
 %{perl_vendorlib}/DateTime/Format/*.pm
 %{perl_vendorlib}/DateTime/Format/Natural
-%{_mandir}/man?/*
+%{_mandir}/man1/dateparse.1p*
+%{_mandir}/man3/DateTime::Format::Natural*.3pm*
