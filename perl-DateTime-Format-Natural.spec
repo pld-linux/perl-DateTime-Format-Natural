@@ -8,12 +8,12 @@
 Summary:	DateTime::Format::Natural - Create machine readable date/time with natural parsing logic
 Summary(pl.UTF-8):	DateTime::Format::Natural - Tworzy datę/czas dogodny dla maszyn
 Name:		perl-DateTime-Format-Natural
-Version:	1.05
+Version:	1.06
 Release:	1
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-authors/id/S/SC/SCHUBIGER/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	ad5db72bde9f8d74c36f4883ca1ef6c2
+# Source0-md5:	e4e275ae98c3981b607ff03fe0bba690
 URL:		http://search.cpan.org/dist/DateTime-Format-Natural/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
