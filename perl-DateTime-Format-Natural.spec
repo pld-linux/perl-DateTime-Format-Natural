@@ -4,7 +4,6 @@
 
 %define	pdir	DateTime
 %define	pnam	Format-Natural
-%include	/usr/lib/rpm/macros.perl
 Summary:	DateTime::Format::Natural - Create machine readable date/time with natural parsing logic
 Summary(pl.UTF-8):	DateTime::Format::Natural - Tworzy datę/czas dogodny dla maszyn
 Name:		perl-DateTime-Format-Natural
